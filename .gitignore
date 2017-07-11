@@ -1,1 +1,3 @@
 node.modules
+.idea/koa-project.iml
+.idea/modules.xml
