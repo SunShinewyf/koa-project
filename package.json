@@ -22,6 +22,7 @@
     "nunjucks": "~3.0.0 "
   },
   "devDependencies": {
+    "co": "^4.6.0",
     "crypto": "0.0.3",
     "nodemon": "^1.8.1"
   }
