@@ -1,2 +1,11 @@
 {% extends "views/layout.nunjucks" %}
-<div class="container">内容</div>
+{% block content %}
+<div class="left-area">
+   <div class="left-header">
+      <a href="" class="all">全部</a>
+      <a href="">精华</a>
+      <a href="">分享</a>
+   </div>
+</div>
+<div class="right-area"></div>
+{% endblock %}

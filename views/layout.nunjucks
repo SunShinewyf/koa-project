@@ -8,7 +8,6 @@
    
 </head>
 <body>
-{% block content %}
 <header>
    <span class="logo">前端论坛</span>
    <input type="text" class="search" name="search" placeholder="搜索"/>
@@ -20,6 +19,10 @@
         <li class="route"><a href="/user/login">登录</a></li>
    </ul>
 </header>
+{% block content %}
 {% endblock %}
+<footer>
+   <p>authored by <a href="https://github.com/SunShinewyf">SunShine</a></p>
+</footer>
 </body>
 </html>
