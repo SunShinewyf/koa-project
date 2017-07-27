@@ -13,10 +13,10 @@
    <input type="text" class="search" name="search" placeholder="搜索"/>
    <ul class="routes">
         <li class="route"><a href="/">首页</a></li>
-        <li class="route"><a href="/post/create">发表帖子</a></li>
-        <li class="route"><a href="/user/setting">设置</a></li>
-        <li class="route"><a href="/user/register">注册</a></li>
-        <li class="route"><a href="/user/login">登录</a></li>
+        <li class="route"><a href="/posts/write">发表帖子</a></li>
+        <li class="route"><a href="/users/setting">设置</a></li>
+        <li class="route"><a href="/users/register">注册</a></li>
+        <li class="route"><a href="/users/login">登录</a></li>
    </ul>
 </header>
 {% block content %}

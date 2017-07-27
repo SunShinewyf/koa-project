@@ -2,12 +2,28 @@ const router = require('koa-router')()
 
 router.prefix('/users')
 
-router.get('/', function (ctx, next) {
-  ctx.body = 'this is a users response!'
+router.get('/', async (ctx, next) => {
+   await ctx.render('users/index',{
+     title:'用户中心'
+   })
 })
 
-router.get('/bar', function (ctx, next) {
-  ctx.body = 'this is a users/bar response'
+router.get('/register', async (ctx, next) => {
+    await ctx.render('users/register',{
+      title:'用户注册'
+    })
+})
+
+router.get('/login',async (ctx,next) => {
+   await ctx.render('users/login',{
+     title:'用户登录'
+   })
+})
+
+router.get('/setting',async (ctx,next) => {
+   await ctx.render('users/setting',{
+     title: '用户设置'
+   })
 })
 
 module.exports = router
