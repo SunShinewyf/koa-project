@@ -6,6 +6,10 @@
       <a href="">精华</a>
       <a href="">分享</a>
    </div>
+   <ul class="post-list">
+   {% block list %}
+   {% endblock %}
+   </ul>
 </div>
 <div class="right-area">
   <h3>简易前端社区</h3>
