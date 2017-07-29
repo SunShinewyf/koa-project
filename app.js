@@ -5,6 +5,7 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const router = require('koa-router')()
 
 const config = require('./config')
 const index = require('./routes/index')
@@ -38,5 +39,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(posts.routes(), posts.allowedMethods())
-
+router.use('/user',async (ctx,next) =>{
+  console.log('jjjj')
+})
 module.exports = app

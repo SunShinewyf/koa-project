@@ -8,7 +8,7 @@ router.get('/', async (ctx, next) => {
    })
 })
 
-router.get('/register', async (ctx, next) => {
+router.get('/register/:id', async (ctx, next) => {
     await ctx.render('users/register',{
       title:'用户注册'
     })
