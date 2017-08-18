@@ -6,7 +6,7 @@
       <a href="">精华</a>
       <a href="">分享</a>
    </div>
-   {% include "views/posts/list.nunjucks" %}     
+   {% include "views/posts/index.nunjucks" %}     
 </div>
 <div class="right-area">
   <h3>简易前端社区</h3>

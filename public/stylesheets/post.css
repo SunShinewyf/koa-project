@@ -16,6 +16,7 @@
    border-radius: 3px;
    vertical-align: middle;
    float: left;
+   padding-right: 10px;
 }
 .post-list li .title{
     vertical-align: middle;
