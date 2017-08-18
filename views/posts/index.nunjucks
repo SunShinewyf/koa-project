@@ -1,9 +1,0 @@
-{% extends "./index.nunjucks" %}
-{% block list %}
-    <li>
-        <a href=""><img src=""/></a>
-        <span class="reply_count">12233</span>
-        <a href="" class="title">这是标题</a>
-        <span class="date">2017-07-30</span>
-    </li>
-{% endblock %}

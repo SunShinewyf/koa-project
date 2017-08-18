@@ -2,7 +2,10 @@ const router = require('koa-router')()
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
-    title: '简易论坛系统!'
+    title: '简易论坛系统!',
+    posts:[
+      
+    ]
   })
 })
 
