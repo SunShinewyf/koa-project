@@ -1,4 +1,4 @@
-.login-panel{
+.login-panel,.register-panel{
     padding: 50px 10px;
     border-radius: 0 0 3px 3px;
     background:#fff;
@@ -32,4 +32,25 @@
     text-align: center;
     border:none;
     margin-left: 180px;
+}
+.user-info{
+    border-radius: 0 0 3px 3px;
+    background:#fff;
+    padding:10px;
+}
+.user-info .avatar,.right-area .avatar{
+    width:48px;
+    height: 48px;
+    vertical-align: middle;
+}
+.user-info .name{
+    color:#778087;
+}
+.user-info .count{
+    padding-top:10px;
+    display: inline-block;
+}
+.right-area .count{
+    padding:10px;
+    display: inline-block;
 }
