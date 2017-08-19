@@ -10,6 +10,6 @@
 </div>
 <div class="right-area">
   <h3>简易前端社区</h3>
-  <p>你可以<a href="">登录</a>或者<a href="">注册</a></p>
+  <p>你可以<a href="/users/login">登录</a>或者<a href="/users/register">注册</a></p>
 </div>
 {% endblock %}

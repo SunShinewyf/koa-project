@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="/stylesheets/main.css" rel="stylesheet">
     <link href="/stylesheets/post.css" rel="stylesheet">
+    <link href="/stylesheets/user.css" rel="stylesheet">
 </head>
 <body>
 <header>

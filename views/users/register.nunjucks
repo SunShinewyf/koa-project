@@ -1,1 +1,14 @@
-<div> this is the register page</div>
+{% extends "views/layout.nunjucks" %}
+{% block content %}
+<div class="left-area">
+   <div class="left-header">
+      <span><a href="" class="index">首页</a>/注册</span>
+   </div>
+   <div class="login-panel">
+   
+   </div>
+</div>
+<div class="right-area">
+  <h3>简易前端社区</h3>
+</div>
+{% endblock %}
