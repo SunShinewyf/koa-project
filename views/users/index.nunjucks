@@ -15,9 +15,9 @@
   <div class="detail">
      <a href=""><img class="avatar" src="https://avatars3.githubusercontent.com/u/11244400?v=4&s=120"/></a>
      <span class="name">SunShine</span></br>
-     <span class="count">积分:20</span>
-     <span class="signature">“ 这家伙很懒，什么个性签名都没有留下。 ”</span>
+     <span class="count">积分:20</span></br>
+     <span class="signature">这家伙很懒，什么个性签名都没有留下.</span>
   </div>
-  <div class="write-btn"></div>
+  <div class="write-btn">发表话题</div>
 </div>
 {% endblock %}

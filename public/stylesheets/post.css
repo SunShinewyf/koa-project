@@ -24,3 +24,14 @@
     vertical-align: middle;
     line-height: 30px;
 }
+.write-panel{
+    padding: 50px 10px;
+    border-radius: 0 0 3px 3px;
+    background:#fff;
+}
+.write-panel .tag-select{
+    height: 34px;
+    width: 248px;
+    border:1px solid #ccc;
+    padding-left: 10px;
+}
