@@ -16,7 +16,7 @@ var userSchema = new mongoose.Schema({
     signature:{type:String,default:'这家伙很懒，什么个性签名都没有留下'},
     topic:{type:Number, default:0},
     reply:{type:Number, default:0},
-    create_time:{type:String, default:Data.now()}
+    create_time:{type:Date, default:Date.now}
 })
 
 var User = mongoose.model('User',userSchema)
