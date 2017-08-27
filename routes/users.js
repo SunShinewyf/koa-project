@@ -28,6 +28,7 @@ router.get('/setting',async (ctx,next) => {
    })
 })
 
+//注册页面的表单提交
 router.post('/register',async (ctx,next) =>{
    let body = ctx.request.body;
    console.log(validator.isEmail(body.email),'ooo')
@@ -60,6 +61,7 @@ router.post('/register',async (ctx,next) =>{
    let user = await User.findOne({
       email:body.email
    });
+    console.log(user,'jjjj')
    if(user){
         await ctx.render('users/register',{
          title:'用户注册',
@@ -79,12 +81,50 @@ router.post('/register',async (ctx,next) =>{
    //将新用户存入数据库
    let result = await newUser.save();
    if(result){
-     return ctx.success();
+     await ctx.render('users/login',{
+         title:'用户登录',
+         message:'注册成功!',
+         success:true
+     });
    }else{
-     return ctx.error('注册失败');
+     await ctx.render('users/login',{
+         title:'用户注册',
+         message:'注册失败!',
+         error:true
+     });
    }
 
 
+})
+
+//登录页面的表单提交
+router.post('/login',async (ctx,next) => {
+  let body = ctx.request.body;
+  if(!body.email || !body.password){
+     await ctx.render('users/login',{
+        title: '用户登录',
+        message:'请填写登录邮箱或密码',
+        error:true
+     })
+  }
+
+  let user = await User.findOne({
+      email:body.email
+  });
+
+  if(user){
+     await ctx.render('/',{
+       title:'简易论坛系统',
+       message:'登录成功',
+       success:true
+     })
+  }else{
+    await ctx.render('/',{
+       title:'用户登录',
+       message:'用户不存在',
+       error:false
+     })
+  }
 })
 
 module.exports = router
