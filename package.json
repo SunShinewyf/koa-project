@@ -25,6 +25,7 @@
   "devDependencies": {
     "co": "^4.6.0",
     "crypto": "0.0.3",
+    "koa-session": "^5.5.0",
     "mongoose": "^4.11.7",
     "nodemon": "^1.8.1"
   }

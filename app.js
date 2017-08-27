@@ -12,6 +12,7 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 const posts = require('./routes/posts')
 
+const showTips = require('./middleware/show-tips');
 // error handler
 onerror(app)
 
@@ -22,6 +23,10 @@ app.use(bodyparser({
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
+
+//加入错误提示的中间件
+app.use(showTips());
+
 
 app.use(views(__dirname + '/views', {
   extension: 'nunjucks'
