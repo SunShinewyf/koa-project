@@ -95,5 +95,17 @@ footer p{
   color:#ababab;
   margin-left:20px;
 }
-
+ 
+.success-tips{
+   color:green;
+   text-align: center;
+   line-height: 30px;
+   margin-bottom: 20px;
+}
+.error-tips{
+  color: red;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
 

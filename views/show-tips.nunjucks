@@ -1,4 +1,0 @@
-{% extends "views/layout.nunjucks" %}
-{% block content %}
-<div>this is an error page</div>
-{% endblock %}

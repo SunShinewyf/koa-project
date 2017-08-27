@@ -5,6 +5,7 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const session = require("koa-session2")
 const router = require('koa-router')()
 
 const config = require('./config')
@@ -12,7 +13,6 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 const posts = require('./routes/posts')
 
-const showTips = require('./middleware/show-tips');
 // error handler
 onerror(app)
 
@@ -24,9 +24,10 @@ app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
 
-//加入错误提示的中间件
-app.use(showTips());
-
+app.use(session({
+    key: "SESSIONID",   //default "koa:sess"
+    maxAge: 5000  //设置session超时时间
+}))
 
 app.use(views(__dirname + '/views', {
   extension: 'nunjucks'

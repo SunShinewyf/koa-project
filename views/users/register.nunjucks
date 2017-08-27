@@ -5,6 +5,12 @@
       <span><a href="/" class="index">首页</a>/ 注册</span>
    </div>
    <div class="register-panel">
+    {% if success %}
+    <p class="success-tips">{{ message }}</p>
+    {% endif %}
+    {% if error %}
+    <p class="error-tips">{{ message }}</p>
+    {% endif %}
         <form method="post"  action="/users/register">
         <div class="control-group">
             <label class="label" for="email">邮箱</label>
