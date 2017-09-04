@@ -7,7 +7,7 @@ const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 const path = require('path')
 
-const postSchema = new mongoose({
+const postSchema = new mongoose.Schema({
     title:{type:String,required:true},
     content:{type:String,required:true},
     author_id:{type:ObjectId,required:true},
@@ -19,5 +19,5 @@ const postSchema = new mongoose({
     good:{type:Boolean,default:false} //是否是精华帖子
 })
 
-const Post = mongoose.model(postSchema)
+const Post = mongoose.model('Post',postSchema)
 module.exports = Post

@@ -13,7 +13,7 @@
     {% endif %}
         <form method="post" action="">
         <div class="control-group">
-            <label class="label" for="email">用户名</label>
+            <label class="label" for="email">邮箱：</label>
             <input class="name input" name="email" type="text" placeholder="请填写登录邮箱"/>
         </div>
         <div class="control-group">

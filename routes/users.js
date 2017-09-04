@@ -1,7 +1,8 @@
 const router = require('koa-router')()
-const validator = require('validator');
-var User = require('../models/user.js');
-
+const validator = require('validator')
+var User = require('../models/user')
+var db = require('../libs/db')
+const crypto = require('crypto')
 router.prefix('/users')
 
 router.get('/', async (ctx, next) => {
@@ -73,11 +74,11 @@ router.post('/register',async (ctx,next) =>{
    let md5 = crypto.createHash('md5');
    let password = md5.update(body.psw).digest('base64');
    let newUser = new User({
+     username:body.username,
+     password: password,
      email:body.email,
-     name:body.username,
-     password: password
    })
-  
+   console.log(newUser);
    //将新用户存入数据库
    let result = await newUser.save();
    if(result){

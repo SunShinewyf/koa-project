@@ -3,7 +3,6 @@
  * date:2017-07-12
  */
 const mongoose = require('mongoose')
-const crypto = require('crypto')
 const path = require('path')
 
 var userSchema = new mongoose.Schema({
