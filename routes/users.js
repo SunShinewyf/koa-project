@@ -32,7 +32,6 @@ router.get('/setting',async (ctx,next) => {
 //注册页面的表单提交
 router.post('/register',async (ctx,next) =>{
    let body = ctx.request.body;
-   console.log(validator.isEmail(body.email),'ooo')
    if(!validator.isEmail(body.email)){
       await ctx.render('users/register',{
          title:'用户注册',
@@ -62,15 +61,17 @@ router.post('/register',async (ctx,next) =>{
    let user = await User.findOne({
       email:body.email
    });
-    console.log(user,'jjjj')
+  
    if(user){
         await ctx.render('users/register',{
-         title:'用户注册',
-         message:'该邮箱已经注册过了!',
-         error:true
-      })
+            title:'用户注册',
+            message:'该邮箱已经注册过了!',
+            error:true
+        })
+        //这句必须加上，否则的话即使后面有重复邮箱注册的时候也会执行后面的逻辑
+        return
    }
-    
+
    let md5 = crypto.createHash('md5');
    let password = md5.update(body.psw).digest('base64');
    let newUser = new User({
@@ -78,7 +79,6 @@ router.post('/register',async (ctx,next) =>{
      password: password,
      email:body.email,
    })
-   console.log(newUser);
    //将新用户存入数据库
    let result = await newUser.save();
    if(result){
@@ -88,7 +88,7 @@ router.post('/register',async (ctx,next) =>{
          success:true
      });
    }else{
-     await ctx.render('users/login',{
+     await ctx.render('users/register',{
          title:'用户注册',
          message:'注册失败!',
          error:true
@@ -101,29 +101,42 @@ router.post('/register',async (ctx,next) =>{
 //登录页面的表单提交
 router.post('/login',async (ctx,next) => {
   let body = ctx.request.body;
-  if(!body.email || !body.password){
+  console.log(body,'oooo')
+  if(!body.email || !body.psw){
      await ctx.render('users/login',{
         title: '用户登录',
         message:'请填写登录邮箱或密码',
         error:true
      })
+     return
   }
 
   let user = await User.findOne({
       email:body.email
   });
 
-  if(user){
-     await ctx.render('/',{
+  let md5 = crypto.createHash('md5');
+  let newPassword = md5.update(body.psw).digest('base64');
+  console.log(user.password,newPassword,'uuuu')
+  if(!user){
+     await ctx.render('users/login',{
+       title:'用户登录',
+       message:'用户不存在',
+       error:true
+     })
+     return
+  }else if(user.password != newPassword){
+      await ctx.render('users/login',{
+        title:'用户登录',
+        message:'密码错误',
+        error:true
+      })
+      return
+  }else{
+      await ctx.render('',{
        title:'简易论坛系统',
        message:'登录成功',
        success:true
-     })
-  }else{
-    await ctx.render('/',{
-       title:'用户登录',
-       message:'用户不存在',
-       error:false
      })
   }
 })
